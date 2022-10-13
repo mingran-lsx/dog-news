@@ -1,0 +1,33 @@
+############################################################
+#
+# 用户微服务
+# web访问端口号  约定：8003
+#
+############################################################
+#tomcat:
+#  uri-encoding: UTF-8
+#  max-swallow-size: -1  # tomcat默认大小2M，超过2M的文件不会被捕获，需要调整此处大小为100MB或者-1即可
+server:
+    port: 8003
+spring:
+    redis:
+        host: 120.46.213.131
+        database: 0
+        port: 6379
+        password: 123456
+#        timeout: 10000
+#        jedis: # jedis连接池配置
+#            pool:
+#                max-active: 100  # 最大连接数
+#                max-wait: -1 # 最大阻塞时间
+#                max-idle: 100 # 最大空闲连接数
+#                min-idle: 0 # 最小空闲连接数
+
+# 在dev环境开启mybatis的日志打印
+mybatis:
+    configuration:
+        log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+# 设置域名，在java代码中获取，这里是资源配置
+website:
+    domain-name: imoocnews.com
